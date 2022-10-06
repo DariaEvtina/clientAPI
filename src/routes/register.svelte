@@ -14,6 +14,7 @@
             goto('/');
         }
     }
+    //
 </script>
 
 <svelte:head>
