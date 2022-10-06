@@ -1,6 +1,7 @@
 <script>
     import { goto, stores } from '@sapper/app';
     import { post } from 'utils.js';
+    import {error} from "jquery/external/sizzle/dist/sizzle";
     const { session } = stores();
     let username = '';
     let name = '';
@@ -8,7 +9,7 @@
     let error = null;
     async function submit(event) {
         const response = await post(`auth/register`, { username, name, password });
-        error=responce.error();
+        error=error();
         if (response.id) {
             goto('/');
         }
